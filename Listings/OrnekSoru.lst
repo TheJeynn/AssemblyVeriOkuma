@@ -1,0 +1,130 @@
+A51 MACRO ASSEMBLER  ORNEKSORU                                                            04/03/2026 11:45:29 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\OrnekSoru.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE OrnekSoru.a51 SET(SMALL) DEBUG PRINT(.\Listings\OrnekSoru.lst) OBJECT(.
+                      \Objects\OrnekSoru.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     ;30h ile 50h adresleri arasindaki verilerden 3’ün katlari olanlari 50h adresinden itibaren
+                       2     ;kopyalayan ve yeni olusan dizinin en büyük elemaninin 3’ün kaç kati oldugunu 70h adresine
+                       3     ;kaydeden programi yaziniz
+                       4     
+0000                   5     org 0000h
+0000 802E              6             SJMP basla
+0030                   7     org 0030h
+                       8             
+0030                   9     basla:
+0030 753003           10     MOV 30H, #3     ; 3'ün kati (Test için)
+0033 753100           11     MOV 31H, #0
+0036 753209           12     MOV 32H, #9     ; 3'ün kati
+0039 75330C           13     MOV 33H, #12    ; 3'ün kati
+003C 75340F           14     MOV 34H, #15    ; 3'ün kati
+003F 753514           15     MOV 35H, #20
+0042 753615           16     MOV 36H, #21    ; 3'ün kati
+0045 753719           17     MOV 37H, #25
+0048 75385C           18     MOV 38H, #92    ; 3'ün kati
+004B 753921           19     MOV 39H, #33    ; 3'ün kati
+004E 753AD2           20     MOV 3AH, #210
+0051 753B2A           21     MOV 3BH, #42    ; 3'ün kati
+0054 753C2D           22     MOV 3CH, #45    ; 3'ün kati
+0057 753D32           23     MOV 3DH, #50
+005A 753E33           24     MOV 3EH, #51    ; 3'ün kati
+005D 753F3C           25     MOV 3FH, #60    ; 3'ün kati
+0060 754046           26     MOV 40H, #70   ; 3'ün kati
+0063 754146           27     MOV 41H, #70
+0066 754248           28     MOV 42H, #72    ; 3'ün kati
+0069 754350           29     MOV 43H, #80
+006C 754451           30     MOV 44H, #81    ; 3'ün kati
+006F 75455A           31     MOV 45H, #90    ; 3'ün kati
+0072 75465D           32     MOV 46H, #93    ; 3'ün kati
+0075 754764           33     MOV 47H, #100
+0078 754866           34     MOV 48H, #102   ; 3'ün kati
+007B 7549C8           35     MOV 49H, #200
+007E 754A6F           36     MOV 4AH, #111   ; 3'ün kati
+0081 754B78           37     MOV 4BH, #120   ; 3n kati
+0084 754C7B           38     MOV 4CH, #123   ; 3'ün kati
+0087 754D82           39     MOV 4DH, #130
+008A 754E84           40     MOV 4EH, #132   ; 3'ün kati
+008D 754F01           41     MOV 4FH, #1   ; 3'ün kati
+                      42     
+0090 7830             43             mov R0,#30h
+0092 7950             44             mov R1,#50h
+                      45     
+                      46             
+0094                  47     tekrar:
+0094 75F003           48             mov B,#3
+0097 E6               49         mov A,@R0
+0098 FA               50             mov R2,A
+0099 84               51             DIV AB
+009A E5F0             52             mov A,B
+009C 6003             53             JZ katidir
+009E 0200A6           54             LJMP dongukontrol
+                      55             
+                      56             
+00A1                  57     katidir:
+A51 MACRO ASSEMBLER  ORNEKSORU                                                            04/03/2026 11:45:29 PAGE     2
+
+00A1 EA               58             mov A,R2
+00A2 F7               59             mov @R1,A
+00A3 09               60             INC R1
+00A4 8000             61             SJMP dongukontrol
+                      62             
+00A6                  63     dongukontrol:
+00A6 08               64             INC R0
+00A7 B850EA           65             CJNE R0,#50h,tekrar
+00AA 7850             66             mov R0,#50h
+00AC 7970             67             mov R1,#70h
+00AE E6               68             mov A,@R0
+00AF 8000             69             SJMP enbuyukbul
+                      70             
+00B1                  71     enbuyukbul:
+00B1 08               72             INC R0
+00B2 FA               73             mov R2,A
+00B3 96               74             SUBB A,@R0
+00B4 400A             75             JC Rbuyuk
+00B6 5000             76             JNC Abuyuk
+                      77             
+00B8                  78     Abuyuk:
+00B8 EA               79             mov A,R2
+00B9 08               80             INC R0
+00BA B870F4           81             CJNE R0,#70h,enbuyukbul
+00BD 0200C8           82             LJMP yazdir
+                      83             
+00C0                  84     Rbuyuk:
+00C0 C3               85             CLR C
+00C1 E6               86             mov A,@R0
+00C2 08               87             INC R0
+00C3 B870EB           88             CJNE R0,#70h,enbuyukbul
+00C6 8000             89             SJMP yazdir
+                      90             
+00C8                  91     yazdir:
+00C8 F570             92             mov 70h,A
+                      93     
+00CA 80FE             94             SJMP $
+                      95     end
+A51 MACRO ASSEMBLER  ORNEKSORU                                                            04/03/2026 11:45:29 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+ABUYUK . . . . . .  C ADDR   00B8H   A   
+B. . . . . . . . .  D ADDR   00F0H   A   
+BASLA. . . . . . .  C ADDR   0030H   A   
+DONGUKONTROL . . .  C ADDR   00A6H   A   
+ENBUYUKBUL . . . .  C ADDR   00B1H   A   
+KATIDIR. . . . . .  C ADDR   00A1H   A   
+RBUYUK . . . . . .  C ADDR   00C0H   A   
+TEKRAR . . . . . .  C ADDR   0094H   A   
+YAZDIR . . . . . .  C ADDR   00C8H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

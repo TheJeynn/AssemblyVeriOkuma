@@ -1,4 +1,4 @@
-A51 MACRO ASSEMBLER  FIRSTLAB1                                                            03/31/2026 17:35:31 PAGE     1
+A51 MACRO ASSEMBLER  FIRSTLAB1                                                            04/03/2026 11:19:44 PAGE     1
 
 
 MACRO ASSEMBLER A51 V8.2.7.0
@@ -8,165 +8,8 @@ ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE FirstLab1.a51 SET(SMALL) DEBUG 
 
 LOC  OBJ            LINE     SOURCE
 
-0000                   1     ORG 0000H
-0000 802E              2             SJMP basla
-                       3     
-0030                   4     ORG 0030H
-                       5     
-0030                   6     basla:
-                       7             ; 1000H'den 1020H'ye test degerleri ata
-0030 901000            8             mov dptr, #1000H
-                       9             
-                      10             ; Örnek degerler: tek ve çift sayilar karisik
-0033 7401             11             mov a, #01H
-0035 F0               12             movx @dptr, a
-0036 A3               13             inc dptr
-0037 7402             14             mov a, #02H
-0039 F0               15             movx @dptr, a
-003A A3               16             inc dptr
-003B 7403             17             mov a, #03H
-003D F0               18             movx @dptr, a
-003E A3               19             inc dptr
-003F 7404             20             mov a, #04H
-0041 F0               21             movx @dptr, a
-0042 A3               22             inc dptr
-0043 7405             23             mov a, #05H
-0045 F0               24             movx @dptr, a
-0046 A3               25             inc dptr
-0047 7406             26             mov a, #06H
-0049 F0               27             movx @dptr, a
-004A A3               28             inc dptr
-004B 7407             29             mov a, #07H
-004D F0               30             movx @dptr, a
-004E A3               31             inc dptr
-004F 7408             32             mov a, #08H
-0051 F0               33             movx @dptr, a
-0052 A3               34             inc dptr
-0053 7409             35             mov a, #09H
-0055 F0               36             movx @dptr, a
-0056 A3               37             inc dptr
-0057 740A             38             mov a, #0AH
-0059 F0               39             movx @dptr, a
-005A A3               40             inc dptr
-005B 740B             41             mov a, #0BH
-005D F0               42             movx @dptr, a
-005E A3               43             inc dptr
-005F 740C             44             mov a, #0CH
-0061 F0               45             movx @dptr, a
-0062 A3               46             inc dptr
-0063 740D             47             mov a, #0DH
-0065 F0               48             movx @dptr, a
-0066 A3               49             inc dptr
-0067 740E             50             mov a, #0EH
-0069 F0               51             movx @dptr, a
-006A A3               52             inc dptr
-006B 740F             53             mov a, #0FH
-006D F0               54             movx @dptr, a
-006E A3               55             inc dptr
-006F 7410             56             mov a, #10H
-0071 F0               57             movx @dptr, a
-A51 MACRO ASSEMBLER  FIRSTLAB1                                                            03/31/2026 17:35:31 PAGE     2
-
-0072 A3               58             inc dptr
-0073 7411             59             mov a, #11H
-0075 F0               60             movx @dptr, a
-0076 A3               61             inc dptr
-0077 7412             62             mov a, #12H
-0079 F0               63             movx @dptr, a
-007A A3               64             inc dptr
-007B 7413             65             mov a, #13H
-007D F0               66             movx @dptr, a
-007E A3               67             inc dptr
-007F 7414             68             mov a, #14H
-0081 F0               69             movx @dptr, a
-0082 A3               70             inc dptr
-0083 7415             71             mov a, #15H
-0085 F0               72             movx @dptr, a
-0086 A3               73             inc dptr
-0087 7416             74             mov a, #16H
-0089 F0               75             movx @dptr, a
-008A A3               76             inc dptr
-008B 7417             77             mov a, #17H
-008D F0               78             movx @dptr, a
-008E A3               79             inc dptr
-008F 7418             80             mov a, #18H
-0091 F0               81             movx @dptr, a
-0092 A3               82             inc dptr
-0093 7419             83             mov a, #19H
-0095 F0               84             movx @dptr, a
-0096 A3               85             inc dptr
-0097 741A             86             mov a, #1AH
-0099 F0               87             movx @dptr, a
-009A A3               88             inc dptr
-009B 741B             89             mov a, #1BH
-009D F0               90             movx @dptr, a
-009E A3               91             inc dptr
-009F 741C             92             mov a, #1CH
-00A1 F0               93             movx @dptr, a
-00A2 A3               94             inc dptr
-00A3 741D             95             mov a, #1DH
-00A5 F0               96             movx @dptr, a
-00A6 A3               97             inc dptr
-00A7 741E             98             mov a, #1EH
-00A9 F0               99             movx @dptr, a
-00AA A3              100             inc dptr
-00AB 741F            101             mov a, #1FH
-00AD F0              102             movx @dptr, a
-00AE A3              103             inc dptr
-00AF 7420            104             mov a, #20H
-00B1 F0              105             movx @dptr, a
-                     106             ;üstteki kod veri seti
-00B2 901000          107             mov dptr,#1000h
-00B5 7830            108             mov R0,#30h ;;tek dizi baslangici
-00B7 7950            109             mov R1,#50h ;çift dizi baslangici
-00B9 757100          110             mov 71h,#00h ;tek dizi adedi
-00BC 757200          111             mov 72h,#00h ;tek dizi toplami
-00BF 757300          112             mov 73h,#00h ;çift dizi adedi
-00C2 757400          113             mov 74h,#00h ;çift dizi toplami
-00C5                 114     tekrarla:       
-00C5 E0              115             movx A,@dptr
-00C6 FA              116             mov R2,A
-00C7 20E002          117             JB ACC.0,tek    
-00CA 800B            118             SJMP cift
-00CC                 119     tek:
-00CC F6              120             mov @R0,A
-00CD 08              121             INC R0
-00CE 0571            122             INC 71h
-00D0 2572            123             ADD A,72h
-A51 MACRO ASSEMBLER  FIRSTLAB1                                                            03/31/2026 17:35:31 PAGE     3
-
-00D2 F572            124             mov 72h,A
-00D4 0200E2          125             LJMP dongukontrol
-                     126             
-00D7                 127     cift:
-00D7 F7              128             mov @R1,A
-00D8 09              129             INC R1
-00D9 0573            130             INC 73h
-00DB 2574            131             ADD A,74h
-00DD F574            132             mov 74h,A
-00DF 0200E2          133             LJMP dongukontrol
-                     134             
-00E2                 135     dongukontrol:
-00E2 A3              136             INC dptr
-00E3 E582            137             mov A,DPL
-00E5 B420DD          138             CJNE A,#20h,tekrarla
-                     139             
-                     140             
-00E8 E571            141             mov A,71h
-00EA B57305          142             CJNE A,73h,esitdegil ;esit ise alt satira degilse esit degile
-00ED 7575FF          143             mov 75h,#0FFh ;esit atamasi
-00F0 800A            144         SJMP bitti
-00F2                 145     esitdegil:
-00F2 4005            146             JC tekkucuk
-00F4 75750F          147             mov 75h,#0Fh
-00F7 8003            148             SJMP bitti
-00F9                 149     tekkucuk:
-00F9 7575F0          150             mov 75h,#0F0h
-                     151             
-00FC                 152     bitti:
-00FC 80FE            153         SJMP $              ; Programi burada durdur
-                     154     END
-A51 MACRO ASSEMBLER  FIRSTLAB1                                                            03/31/2026 17:35:31 PAGE     4
+*** WARNING #A41 IN 0 (FirstLab1.a51, LINE 0): MISSING 'END' STATEMENT
+A51 MACRO ASSEMBLER  FIRSTLAB1                                                            04/03/2026 11:19:44 PAGE     2
 
 SYMBOL TABLE LISTING
 ------ ----- -------
@@ -174,19 +17,9 @@ SYMBOL TABLE LISTING
 
 N A M E             T Y P E  V A L U E   ATTRIBUTES
 
-ACC. . . . . . . .  D ADDR   00E0H   A   
-BASLA. . . . . . .  C ADDR   0030H   A   
-BITTI. . . . . . .  C ADDR   00FCH   A   
-CIFT . . . . . . .  C ADDR   00D7H   A   
-DONGUKONTROL . . .  C ADDR   00E2H   A   
-DPL. . . . . . . .  D ADDR   0082H   A   
-ESITDEGIL. . . . .  C ADDR   00F2H   A   
-TEK. . . . . . . .  C ADDR   00CCH   A   
-TEKKUCUK . . . . .  C ADDR   00F9H   A   
-TEKRARLA . . . . .  C ADDR   00C5H   A   
 
 
 REGISTER BANK(S) USED: 0 
 
 
-ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)
+ASSEMBLY COMPLETE.  1 WARNING(S), 0 ERROR(S)
