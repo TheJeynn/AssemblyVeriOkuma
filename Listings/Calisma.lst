@@ -1,0 +1,126 @@
+A51 MACRO ASSEMBLER  CALISMA                                                              04/05/2026 12:17:04 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\Calisma.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE Calisma.a51 SET(SMALL) DEBUG PRINT(.\Listings\Calisma.lst) OBJECT(.\Obj
+                      ects\Calisma.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     ;30h ile 4Fh adresleri arasindaki verilerin en büyügünü bulan
+                       2     ;ve 50h adresine yazan program, sayisini da 51h adresine yazan
+                       3     ;ve adreslerini de 60h adresinden itibaren yazan
+0000                   4     org 0000h
+0000 802E              5             SJMP basla
+0030                   6     org 0030h
+                       7     
+0030                   8     basla:
+0030 753003            9     MOV 30H, #3     ; 3'ün kati (Test için)
+0033 753100           10     MOV 31H, #0
+0036 753209           11     MOV 32H, #9     ; 3'ün kati
+0039 75330C           12     MOV 33H, #12    ; 3'ün kati
+003C 75340F           13     MOV 34H, #15    ; 3'ün kati
+003F 753514           14     MOV 35H, #20
+0042 753615           15     MOV 36H, #21    ; 3'ün kati
+0045 753719           16     MOV 37H, #25
+0048 75385C           17     MOV 38H, #92    ; 3'ün kati
+004B 753921           18     MOV 39H, #33    ; 3'ün kati
+004E 753AD2           19     MOV 3AH, #210
+0051 753BD2           20     MOV 3BH, #210    ; 3'ün kati
+0054 753C2D           21     MOV 3CH, #45    ; 3'ün kati
+0057 753D32           22     MOV 3DH, #50
+005A 753E33           23     MOV 3EH, #51    ; 3'ün kati
+005D 753F3C           24     MOV 3FH, #60    ; 3'ün kati
+0060 754046           25     MOV 40H, #70   ; 3'ün kati
+0063 754146           26     MOV 41H, #70
+0066 754248           27     MOV 42H, #72    ; 3'ün kati
+0069 754350           28     MOV 43H, #80
+006C 754451           29     MOV 44H, #81    ; 3'ün kati
+006F 75455A           30     MOV 45H, #90    ; 3'ün kati
+0072 75465D           31     MOV 46H, #93    ; 3'ün kati
+0075 754764           32     MOV 47H, #100
+0078 754866           33     MOV 48H, #102   ; 3'ün kati
+007B 7549C8           34     MOV 49H, #200
+007E 754AD2           35     MOV 4AH, #210   ; 3'ün kati
+0081 754B78           36     MOV 4BH, #120   ; 3n kati
+0084 754C7B           37     MOV 4CH, #123   ; 3'ün kati
+0087 754D82           38     MOV 4DH, #130
+008A 754E84           39     MOV 4EH, #132   ; 3'ün kati
+008D 754F01           40     MOV 4FH, #1   ; 3'ün kati
+                      41     
+0090 7830             42             mov R0,#30h
+0092 8650             43             mov 50h,@R0
+0094 755101           44             mov 51h,#1 
+                      45     
+0097                  46     tekrar:
+0097 E6               47             mov A,@R0
+0098 FA               48             mov R2,A
+0099 C3               49             CLR C
+009A 08               50             INC R0
+009B E550             51             mov A,50h
+009D 96               52             SUBB A,@R0
+009E 400F             53             JC Rbuyuk
+00A0 C3               54             CLR C
+00A1 7002             55             JNZ dongukontrol
+00A3 0551             56             INC 51h
+                      57             
+A51 MACRO ASSEMBLER  CALISMA                                                              04/05/2026 12:17:04 PAGE     2
+
+00A5                  58     dongukontrol:
+00A5 B84FEF           59             CJNE R0,#4Fh,tekrar
+00A8 7930             60             mov R1,#30h
+00AA 7860             61             mov R0,#60h
+00AC 0200B7           62             LJMP karsilastir
+                      63     
+00AF                  64     Rbuyuk:
+00AF 8650             65             mov 50h,@R0
+00B1 755101           66             mov 51h,#01h 
+00B4 0200A5           67             LJMP dongukontrol       
+                      68     
+00B7                  69     karsilastir:
+00B7 E7               70             mov A,@R1
+00B8 C3               71             CLR C
+00B9 9550             72             SUBB A,50h
+00BB 6003             73             JZ esit
+00BD 0200C6           74             LJMP kontroldongusu
+                      75             
+                      76             
+00C0                  77     esit:
+00C0 E9               78             mov A,R1
+00C1 F6               79             mov @R0,A
+00C2 08               80             INC R0
+00C3 0200C6           81             LJMP kontroldongusu
+                      82     
+                      83     
+00C6                  84     kontroldongusu:
+00C6 09               85             INC R1
+00C7 B950ED           86             CJNE R1,#50h,karsilastir
+00CA 8000             87             SJMP bitti
+                      88     
+00CC                  89     bitti:
+00CC 80FE             90             SJMP $
+                      91             
+                      92     END
+A51 MACRO ASSEMBLER  CALISMA                                                              04/05/2026 12:17:04 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+BASLA. . . . . . .  C ADDR   0030H   A   
+BITTI. . . . . . .  C ADDR   00CCH   A   
+DONGUKONTROL . . .  C ADDR   00A5H   A   
+ESIT . . . . . . .  C ADDR   00C0H   A   
+KARSILASTIR. . . .  C ADDR   00B7H   A   
+KONTROLDONGUSU . .  C ADDR   00C6H   A   
+RBUYUK . . . . . .  C ADDR   00AFH   A   
+TEKRAR . . . . . .  C ADDR   0097H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

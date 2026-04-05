@@ -1,14 +1,15 @@
-BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    04/03/2026  11:45:29  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    04/05/2026  12:20:01  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
-C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\FirstLab1.obj, .\Objects\OrnekSoru.obj TO .\Objects\Lab1 PRINT (.\Listings\Lab1.m5
->> 1) RAMSIZE (256)
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\FirstLab1.obj, .\Objects\OrnekSoru.obj, .\Objects\Calisma.obj TO .\Objects\Lab1 PR
+>> INT (.\Listings\Lab1.m51) RAMSIZE (256)
 
 
 INPUT MODULES INCLUDED:
   .\Objects\FirstLab1.obj (FIRSTLAB1)
   .\Objects\OrnekSoru.obj (ORNEKSORU)
+  .\Objects\Calisma.obj (CALISMA)
 
 
 LINK MAP OF MODULE:  .\Objects\Lab1 (FIRSTLAB1)
@@ -21,7 +22,9 @@ LINK MAP OF MODULE:  .\Objects\Lab1 (FIRSTLAB1)
             REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
 
             * * * * * * *   C O D E   M E M O R Y   * * * * * * *
-            CODE    0000H     00CCH     ABSOLUTE     
+            CODE    0000H     00FEH     ABSOLUTE     
+* OVERLAP * CODE    0000H     00CCH     ABSOLUTE     
+* OVERLAP * CODE    0000H     00CEH     ABSOLUTE     
 
 
 
@@ -31,6 +34,157 @@ SYMBOL TABLE OF MODULE:  .\Objects\Lab1 (FIRSTLAB1)
   ----------------------------------
 
   -------         MODULE        FIRSTLAB1
+  D:00E0H         SYMBOL        ACC
+  C:0030H         SYMBOL        BASLA
+  C:00FCH         SYMBOL        BITTI
+  C:00D7H         SYMBOL        CIFT
+  C:00E2H         SYMBOL        DONGUKONTROL
+  D:0082H         SYMBOL        DPL
+  C:00F2H         SYMBOL        ESITDEGIL
+  C:00CCH         SYMBOL        TEK
+  C:00F9H         SYMBOL        TEKKUCUK
+  C:00C5H         SYMBOL        TEKRARLA
+  C:0000H         LINE#         2
+  C:0030H         LINE#         8
+  C:0033H         LINE#         11
+  C:0035H         LINE#         12
+  C:0036H         LINE#         13
+  C:0037H         LINE#         14
+  C:0039H         LINE#         15
+  C:003AH         LINE#         16
+  C:003BH         LINE#         17
+  C:003DH         LINE#         18
+  C:003EH         LINE#         19
+  C:003FH         LINE#         20
+  C:0041H         LINE#         21
+  C:0042H         LINE#         22
+  C:0043H         LINE#         23
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  04/05/2026  12:20:01  PAGE 2
+
+
+  C:0045H         LINE#         24
+  C:0046H         LINE#         25
+  C:0047H         LINE#         26
+  C:0049H         LINE#         27
+  C:004AH         LINE#         28
+  C:004BH         LINE#         29
+  C:004DH         LINE#         30
+  C:004EH         LINE#         31
+  C:004FH         LINE#         32
+  C:0051H         LINE#         33
+  C:0052H         LINE#         34
+  C:0053H         LINE#         35
+  C:0055H         LINE#         36
+  C:0056H         LINE#         37
+  C:0057H         LINE#         38
+  C:0059H         LINE#         39
+  C:005AH         LINE#         40
+  C:005BH         LINE#         41
+  C:005DH         LINE#         42
+  C:005EH         LINE#         43
+  C:005FH         LINE#         44
+  C:0061H         LINE#         45
+  C:0062H         LINE#         46
+  C:0063H         LINE#         47
+  C:0065H         LINE#         48
+  C:0066H         LINE#         49
+  C:0067H         LINE#         50
+  C:0069H         LINE#         51
+  C:006AH         LINE#         52
+  C:006BH         LINE#         53
+  C:006DH         LINE#         54
+  C:006EH         LINE#         55
+  C:006FH         LINE#         56
+  C:0071H         LINE#         57
+  C:0072H         LINE#         58
+  C:0073H         LINE#         59
+  C:0075H         LINE#         60
+  C:0076H         LINE#         61
+  C:0077H         LINE#         62
+  C:0079H         LINE#         63
+  C:007AH         LINE#         64
+  C:007BH         LINE#         65
+  C:007DH         LINE#         66
+  C:007EH         LINE#         67
+  C:007FH         LINE#         68
+  C:0081H         LINE#         69
+  C:0082H         LINE#         70
+  C:0083H         LINE#         71
+  C:0085H         LINE#         72
+  C:0086H         LINE#         73
+  C:0087H         LINE#         74
+  C:0089H         LINE#         75
+  C:008AH         LINE#         76
+  C:008BH         LINE#         77
+  C:008DH         LINE#         78
+  C:008EH         LINE#         79
+  C:008FH         LINE#         80
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  04/05/2026  12:20:01  PAGE 3
+
+
+  C:0091H         LINE#         81
+  C:0092H         LINE#         82
+  C:0093H         LINE#         83
+  C:0095H         LINE#         84
+  C:0096H         LINE#         85
+  C:0097H         LINE#         86
+  C:0099H         LINE#         87
+  C:009AH         LINE#         88
+  C:009BH         LINE#         89
+  C:009DH         LINE#         90
+  C:009EH         LINE#         91
+  C:009FH         LINE#         92
+  C:00A1H         LINE#         93
+  C:00A2H         LINE#         94
+  C:00A3H         LINE#         95
+  C:00A5H         LINE#         96
+  C:00A6H         LINE#         97
+  C:00A7H         LINE#         98
+  C:00A9H         LINE#         99
+  C:00AAH         LINE#         100
+  C:00ABH         LINE#         101
+  C:00ADH         LINE#         102
+  C:00AEH         LINE#         103
+  C:00AFH         LINE#         104
+  C:00B1H         LINE#         105
+  C:00B2H         LINE#         107
+  C:00B5H         LINE#         108
+  C:00B7H         LINE#         109
+  C:00B9H         LINE#         110
+  C:00BCH         LINE#         111
+  C:00BFH         LINE#         112
+  C:00C2H         LINE#         113
+  C:00C5H         LINE#         115
+  C:00C6H         LINE#         116
+  C:00C7H         LINE#         117
+  C:00CAH         LINE#         118
+  C:00CCH         LINE#         120
+  C:00CDH         LINE#         121
+  C:00CEH         LINE#         122
+  C:00D0H         LINE#         123
+  C:00D2H         LINE#         124
+  C:00D4H         LINE#         125
+  C:00D7H         LINE#         128
+  C:00D8H         LINE#         129
+  C:00D9H         LINE#         130
+  C:00DBH         LINE#         131
+  C:00DDH         LINE#         132
+  C:00DFH         LINE#         133
+  C:00E2H         LINE#         136
+  C:00E3H         LINE#         137
+  C:00E5H         LINE#         138
+  C:00E8H         LINE#         141
+  C:00EAH         LINE#         142
+  C:00EDH         LINE#         143
+  C:00F0H         LINE#         144
+  C:00F2H         LINE#         146
+  C:00F4H         LINE#         147
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  04/05/2026  12:20:01  PAGE 4
+
+
+  C:00F7H         LINE#         148
+  C:00F9H         LINE#         150
+  C:00FCH         LINE#         153
   -------         ENDMOD        FIRSTLAB1
 
   -------         MODULE        ORNEKSORU
@@ -59,9 +213,6 @@ SYMBOL TABLE OF MODULE:  .\Objects\Lab1 (FIRSTLAB1)
   C:0054H         LINE#         22
   C:0057H         LINE#         23
   C:005AH         LINE#         24
-BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  04/03/2026  11:45:29  PAGE 2
-
-
   C:005DH         LINE#         25
   C:0060H         LINE#         26
   C:0063H         LINE#         27
@@ -88,6 +239,9 @@ SYMBOL TABLE OF MODULE:  .\Objects\Lab1 (FIRSTLAB1)
   C:009AH         LINE#         52
   C:009CH         LINE#         53
   C:009EH         LINE#         54
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  04/05/2026  12:20:01  PAGE 5
+
+
   C:00A1H         LINE#         58
   C:00A2H         LINE#         59
   C:00A3H         LINE#         60
@@ -116,12 +270,100 @@ SYMBOL TABLE OF MODULE:  .\Objects\Lab1 (FIRSTLAB1)
   C:00CAH         LINE#         94
   -------         ENDMOD        ORNEKSORU
 
+  -------         MODULE        CALISMA
+  C:0030H         SYMBOL        BASLA
+  C:00CCH         SYMBOL        BITTI
+  C:00A5H         SYMBOL        DONGUKONTROL
+  C:00C0H         SYMBOL        ESIT
+  C:00B7H         SYMBOL        KARSILASTIR
+  C:00C6H         SYMBOL        KONTROLDONGUSU
+  C:00AFH         SYMBOL        RBUYUK
+  C:0097H         SYMBOL        TEKRAR
+  C:0000H         LINE#         5
+  C:0030H         LINE#         9
+  C:0033H         LINE#         10
+  C:0036H         LINE#         11
+  C:0039H         LINE#         12
+  C:003CH         LINE#         13
+  C:003FH         LINE#         14
+  C:0042H         LINE#         15
+  C:0045H         LINE#         16
+  C:0048H         LINE#         17
+  C:004BH         LINE#         18
+  C:004EH         LINE#         19
+  C:0051H         LINE#         20
+  C:0054H         LINE#         21
+  C:0057H         LINE#         22
+  C:005AH         LINE#         23
+  C:005DH         LINE#         24
+  C:0060H         LINE#         25
+  C:0063H         LINE#         26
+  C:0066H         LINE#         27
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  04/05/2026  12:20:01  PAGE 6
+
+
+  C:0069H         LINE#         28
+  C:006CH         LINE#         29
+  C:006FH         LINE#         30
+  C:0072H         LINE#         31
+  C:0075H         LINE#         32
+  C:0078H         LINE#         33
+  C:007BH         LINE#         34
+  C:007EH         LINE#         35
+  C:0081H         LINE#         36
+  C:0084H         LINE#         37
+  C:0087H         LINE#         38
+  C:008AH         LINE#         39
+  C:008DH         LINE#         40
+  C:0090H         LINE#         42
+  C:0092H         LINE#         43
+  C:0094H         LINE#         44
+  C:0097H         LINE#         47
+  C:0098H         LINE#         48
+  C:0099H         LINE#         49
+  C:009AH         LINE#         50
+  C:009BH         LINE#         51
+  C:009DH         LINE#         52
+  C:009EH         LINE#         53
+  C:00A0H         LINE#         54
+  C:00A1H         LINE#         55
+  C:00A3H         LINE#         56
+  C:00A5H         LINE#         59
+  C:00A8H         LINE#         60
+  C:00AAH         LINE#         61
+  C:00ACH         LINE#         62
+  C:00AFH         LINE#         65
+  C:00B1H         LINE#         66
+  C:00B4H         LINE#         67
+  C:00B7H         LINE#         70
+  C:00B8H         LINE#         71
+  C:00B9H         LINE#         72
+  C:00BBH         LINE#         73
+  C:00BDH         LINE#         74
+  C:00C0H         LINE#         78
+  C:00C1H         LINE#         79
+  C:00C2H         LINE#         80
+  C:00C3H         LINE#         81
+  C:00C6H         LINE#         85
+  C:00C7H         LINE#         86
+  C:00CAH         LINE#         87
+  C:00CCH         LINE#         90
+  -------         ENDMOD        CALISMA
+
+*** WARNING L5: CODE SPACE MEMORY OVERLAP
+    FROM:    0000H
+    TO:      00FDH
+
+*** WARNING L5: CODE SPACE MEMORY OVERLAP
+    FROM:    0000H
+    TO:      00FDH
+
 ******************************************************************************
-* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 009EH BYTE ( 7%) *
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  04/05/2026  12:20:01  PAGE 7
+
+
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 020EH BYTE (25%) *
 ******************************************************************************
-BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  04/03/2026  11:45:29  PAGE 3
 
-
-
-Program Size: data=8.0 xdata=0 code=204
-LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
+Program Size: data=8.0 xdata=0 code=664
+LINK/LOCATE RUN COMPLETE.  2 WARNING(S),  0 ERROR(S)
