@@ -1,0 +1,63 @@
+A51 MACRO ASSEMBLER  SORU                                                                 04/06/2026 14:08:07 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\Soru.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE Soru.a51 SET(SMALL) DEBUG PRINT(.\Listings\Soru.lst) OBJECT(.\Objects\S
+                      oru.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     org 0000h
+0000 802E              2             SJMP basla
+0030                   3     org 0030h
+                       4             
+0030                   5     basla:
+                       6             
+0030 902000            7             mov dptr,#2000h
+0033 7450              8             mov A,#50h
+0035 F0                9             movx @dptr,A
+0036 A3               10             INC dptr
+0037 7420             11             mov A,#20h
+0039 F0               12             movx @dptr,A
+003A A3               13             INC dptr
+003B 7403             14             mov A,#03h
+003D F0               15             movx @dptr,A
+003E A3               16             INC dptr
+003F 7403             17             mov A,#03h
+0041 F0               18             movx @dptr,A
+0042 A3               19             INC dptr
+0043 7412             20             mov A,#12h
+0045 F0               21             movx @dptr,A
+0046 A3               22             INC dptr
+0047 740F             23             mov A,#0Fh
+0049 F0               24             movx @dptr,A
+004A 902000           25             mov dptr,#2000h
+004D 7900             26             mov R1,#00h
+                      27             
+004F                  28     tekrar:
+004F E0               29             movx A,@dptr
+0050 28               30             ADD A,R0
+0051 F8               31             mov R0,A
+0052 A3               32             INC dptr
+0053 09               33             INC R1
+0054 C3               34             CLR C
+0055 B905F7           35             CJNE R1,#05h,tekrar
+                      36             
+                      37             end
+A51 MACRO ASSEMBLER  SORU                                                                 04/06/2026 14:08:07 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+BASLA. . . . . . .  C ADDR   0030H   A   
+TEKRAR . . . . . .  C ADDR   004FH   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

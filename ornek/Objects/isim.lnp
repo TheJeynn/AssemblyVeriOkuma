@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\Soru.obj" 
+TO ".\Objects\isim" 
+PRINT(".\Listings\isim.m51") RAMSIZE(256) 
