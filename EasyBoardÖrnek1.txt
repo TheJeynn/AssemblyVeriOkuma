@@ -1,0 +1,69 @@
+org 0000h
+	SJMP basla
+org 0030h
+	basla:
+	LCALL bekle
+	lcall Uyaz
+	lcall bekle
+	lcall Syaz
+	lcall bekle
+	lcall Oyaz
+	lcall bekle
+	lcall Ryaz
+	lcall bekle
+	LJMP basla
+	
+	Uyaz:
+	mov p0,#00h ;port 0 input
+	mov p3,#00h 
+	mov p1,#7fh
+	mov p2,#7fh
+	ret
+	
+	Oyaz:
+	mov p0,#00h ;port 0 input
+	mov p3,#00h 
+	mov p1,#7eh
+	mov p2,#7eh
+	ret
+	
+	Syaz:
+	mov p0,#70h
+	mov p1,#76h
+	mov p2,#76h
+	mov p3,#06h
+	ret
+	
+	Ryaz:
+	mov p0,#00h
+	mov p1,#0c6h
+	mov p2,#96h
+	mov p3,#79h
+	ret
+	
+	bekle:
+	mov 22h,#06h
+	tekrar2:
+	mov 21h,#00h
+	tekrar:
+	mov 20h,#00h
+	djnz 20h,$
+	djnz 21h,tekrar
+	djnz 22h,tekrar2
+    ret	
+	
+	bitti:
+	SJMP $
+end
+
+
+Bu kod, sonsuz bir döngü içinde sırasıyla U, S, O, R harflerini (muhtemelen 4 adet 7 segment display veya LED grubu) gösterir.
+
+Çalışma Mantığı:
+basla etiketinden itibaren sırayla Uyaz, Syaz, Oyaz, Ryaz alt programları çağrılır.
+
+Her alt program, P0, P1, P2, P3 portlarına belirli değerler yazar.
+
+Her yazma işleminden sonra bekle alt programı ile kısa bir gecikme oluşturulur (yaklaşık birkaç milisaniye, kristal frekansına bağlı).
+
+Daha sonra LJMP basla ile işlem başa döner ve aynı döngü tekrarlanır.

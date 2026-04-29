@@ -1,0 +1,21 @@
+org 0000h
+	sjmp basla
+org 0030h 
+basla:  
+	 mov p0,#0f9h ;Port0 input
+	 mov p2,#00h ;10101010 yakmak için
+	 mov p3,#00h
+	 mov p1,#05h	
+	
+	bitti:
+	SJMP $
+end	
+
+
+Çalışma Mantığı:
+
+P2’ye bağlı 8 LED (varsayılan bağlantı): Hepsi yanar (çünkü 0x00 tüm bitleri 0 yapar, aktif low mantığında yanık demektir).
+
+P0 ve P1’e bağlı 7 segment display’ler (genellikle 2 veya 4 adet display olabilir):
+
+Bir display’de “1” rakamı görünür.
