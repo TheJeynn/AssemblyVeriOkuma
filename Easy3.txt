@@ -1,0 +1,12 @@
+org 0000h
+	sjmp basla
+org 0030h 
+basla:  
+	 mov p0,#0f9h ;Port0 input
+	 mov p2,#00h ;10101010 yakmak için
+	 mov p3,#00h
+	 mov p1,#05h	
+	
+	bitti:
+	SJMP $
+end	
