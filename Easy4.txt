@@ -1,0 +1,29 @@
+org 0000h
+	sjmp basla
+org 0030h
+	basla:
+	mov p1,#08h
+	mov p0,#0f9h
+	lcall bekle
+	mov p1,#04h
+	mov p0,#0a4h
+	lcall bekle
+	mov p1,#02h
+	mov p0,#0b0h
+	lcall bekle
+	mov p1,#01h
+	mov p0,#99h
+	lcall bekle
+	sjmp basla
+	
+	bekle:
+	mov 22h,#01h
+	tekrar:
+	mov 20h,#00h
+
+	djnz 21h,tekrar
+    ret	
+	
+	bitti:
+	SJMP $
+end

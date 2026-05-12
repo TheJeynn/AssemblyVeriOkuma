@@ -1,0 +1,119 @@
+org 0000h
+	sjmp basla 
+org 0030h
+	basla:
+	mov p0,#0ffh
+	mov p3,#0ffh
+
+	araislem:
+	
+	satir1:
+	//mov p0,#0f0h
+	mov p1,#00h
+	mov p0,#0ffh
+	clr p0.4
+	jnb p0.0,bir_bas
+	jnb p0.1,iki_bas
+	jnb p0.2,uc_bas
+	jnb p0.3,dort_bas
+	setb p0.4
+	
+	clr p0.5
+	jnb p0.0,bes_bas
+	jnb p0.1,alti_bas
+	jnb p0.2,yedi_bas
+	jnb p0.3,sekiz_bas
+	setb p0.5
+	
+	clr p0.6
+	jnb p0.0,dokuz_bas
+	jnb p0.1,on_bas
+	jnb p0.2,onbir_bas
+	jnb p0.3,oniki_bas
+	setb p0.6
+	
+	clr p0.7
+	jnb p0.0,onuc_bas
+	jnb p0.1,ondort_bas
+	jnb p0.2,onbes_bas
+	jnb p0.3,onalti_bas
+	setb p0.7
+	
+	
+	
+	ljmp satir1
+	
+	
+	
+	bir_bas:
+	mov p3,#01h
+	ljmp satir1_son
+	iki_bas:
+	mov p3,#02h
+	ljmp satir1_son
+	uc_bas:
+	mov p3,#03h
+	ljmp satir1_son
+	dort_bas:
+	mov p3,#04h
+	ljmp satir1_son
+	
+	bes_bas:
+	mov p3,#05h
+	ljmp satir2_son
+	alti_bas:
+	mov p3,#06h
+	ljmp satir2_son
+	yedi_bas:
+	mov p3,#07h
+	ljmp satir2_son
+	sekiz_bas:
+	mov p3,#08h
+	ljmp satir2_son
+	
+	dokuz_bas:
+	mov p3,#09h
+	ljmp satir3_son
+	on_bas:
+	mov p3,#0ah
+	ljmp satir3_son
+	onbir_bas:
+	mov p3,#0bh
+	ljmp satir3_son
+	oniki_bas:
+	mov p3,#0ch
+	ljmp satir3_son
+	
+	onuc_bas:
+	mov p3,#0dh
+	ljmp satir4_son
+	ondort_bas:
+	mov p3,#0eh
+	ljmp satir4_son
+	onbes_bas:
+	mov p3,#0fh
+	ljmp satir4_son
+	onalti_bas:
+	mov p3,#10h
+	ljmp satir4_son
+	
+	satir1_son:
+	clr p0.4
+	ljmp araislem
+	
+	satir2_son:
+	clr p0.5
+	ljmp araislem
+	
+	satir3_son:
+	clr p0.6
+	ljmp araislem
+	
+	satir4_son:
+	clr p0.7
+	ljmp araislem
+	
+	end
+	
+	
+	
