@@ -1,0 +1,43 @@
+org 0000h
+	sjmp basla
+org 0030h
+	
+	basla:
+	mov R0,#20h
+	mov R2,#60h
+	mov dptr,#2000h
+	mov R1,#80h
+	
+	dongu1:
+	mov A,@R0
+	mov R3,A
+	CLR C
+	RRC A
+	mov R4,A
+	
+	CLR C 
+	SUBB A,#40h
+	JC kucuk
+	
+	;büyükse buraya gelecek
+	mov A,R4
+	movx @dptr,A
+	mov @R1,A
+	INC R1
+	SJMP ileri
+	
+	
+	
+	kucuk:
+	mov A,R3
+	movx @dptr,A
+	SJMP ileri
+	
+	
+	ileri:
+	INC R0
+	INC dptr
+	DJNZ R2,dongu1
+	
+	
+	end
